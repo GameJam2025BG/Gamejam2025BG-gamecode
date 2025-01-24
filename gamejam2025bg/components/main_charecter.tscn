@@ -12,13 +12,13 @@
 shader = ExtResource("2_mm24y")
 shader_parameter/mask_softness = 1.4
 shader_parameter/mask_threshold = 0.6
-shader_parameter/sort = 1.149
+shader_parameter/sort = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5xq71"]
 shader = ExtResource("4_2y0o8")
 shader_parameter/shake_power = 0.03
 shader_parameter/shake_block_size = 30.5
-shader_parameter/fade = 0.01
+shader_parameter/fade = 0.0
 shader_parameter/direction_r = Vector2(1, 0)
 shader_parameter/direction_g = Vector2(0.4, 1)
 shader_parameter/direction_b = Vector2(-0.7, -0.3)

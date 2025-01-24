@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6muog2f3lir1"]
+
+[ext_resource type="Script" path="res://components/text_box.gd" id="1_qurk4"]
+[ext_resource type="Texture2D" uid="uid://cklm4ka21d8sc" path="res://textures/chatThingy.png" id="2_cmt4k"]
+[ext_resource type="FontFile" uid="uid://bpx8culg84wmh" path="res://sprites/VCR_OSD_MONO_1.001.ttf" id="3_08x75"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 134.0
+offset_bottom = 38.0
+script = ExtResource("1_qurk4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_cmt4k")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_08x75")
+text = "dasdasddasdasddd"
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
