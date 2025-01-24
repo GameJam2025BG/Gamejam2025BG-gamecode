@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1d5w4hwtp3yn"]
+
+[ext_resource type="Script" path="res://scripts/main_charecter.gd" id="1_go1eu"]
+[ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="2_ei7oe"]
+[ext_resource type="Shader" path="res://shaders/pixel_sort.gdshader" id="2_mm24y"]
+[ext_resource type="Script" path="res://scripts/camera_effects.gd" id="2_tcway"]
+[ext_resource type="Script" path="res://scripts/pixel_sort.gd" id="4_2nj7y"]
+[ext_resource type="Shader" path="res://shaders/bug_effect.gdshader" id="4_2y0o8"]
+[ext_resource type="Script" path="res://scripts/bug_effect.gd" id="5_q21jr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4l6gm"]
+shader = ExtResource("2_mm24y")
+shader_parameter/mask_softness = 1.4
+shader_parameter/mask_threshold = 0.6
+shader_parameter/sort = 1.149
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5xq71"]
+shader = ExtResource("4_2y0o8")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_block_size = 30.5
+shader_parameter/fade = 0.01
+shader_parameter/direction_r = Vector2(1, 0)
+shader_parameter/direction_g = Vector2(0.4, 1)
+shader_parameter/direction_b = Vector2(-0.7, -0.3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr2pu"]
+size = Vector2(138, 139)
+
+[node name="Main_Charecter" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_go1eu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_tcway")
+
+[node name="pixel_sort" type="CanvasLayer" parent="Camera2D"]
+
+[node name="pixel_sort" type="ColorRect" parent="Camera2D/pixel_sort"]
+material = SubResource("ShaderMaterial_4l6gm")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_2nj7y")
+metadata/_edit_use_anchors_ = true
+
+[node name="bug_effect" type="CanvasLayer" parent="Camera2D"]
+
+[node name="bug_effect" type="ColorRect" parent="Camera2D/bug_effect"]
+material = SubResource("ShaderMaterial_5xq71")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("5_q21jr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_vr2pu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ei7oe")

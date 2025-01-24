@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dipjjmf15edn4"]
+
+[ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="1_2vjvq"]
+[ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="2_cdw4s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(392, 191)
+texture = ExtResource("1_2vjvq")
+
+[node name="Main_Charecter" parent="." instance=ExtResource("2_cdw4s")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(63, 202)
+texture = ExtResource("1_2vjvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(325, -314)
+texture = ExtResource("1_2vjvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2/Sprite2D"]
+position = Vector2(-208, -107)
+texture = ExtResource("1_2vjvq")
