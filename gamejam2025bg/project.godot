@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
