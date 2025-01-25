@@ -1,7 +1,7 @@
 extends Camera2D
 
-@export var max_offset: float = 50.0
-@export var offset_per_sec: float = 30.0
+@export var max_offset: float = 10.0
+@export var offset_per_sec: float = 2.0
 
 var offset_x: float = 0.0;
 var offset_y: float = 0.0;

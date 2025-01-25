@@ -30,7 +30,6 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_08x75")
-text = "dasdasddasdasddd"
 vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
