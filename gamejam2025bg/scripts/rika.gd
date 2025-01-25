@@ -19,16 +19,18 @@ func _ready() -> void:
 
 var interacted = false
 func _process(delta: float) -> void:
-	
+	if not entered:
+		return
+		
 	if is_bubble:
 		var layout = Dialogic.Styles.load_style("bubble")
 		layout.register_character(load("res://dialogic/characters/Some Creature.dch"), character)
 	
-	if entered && !interacted && is_iteractable && !is_cutscene:
+	if !interacted && is_iteractable && !is_cutscene:
 		DialogManager.start_dialog(position, text)
 		interacted = true
 		print("interacted")
-	if entered && !interacted && is_iteractable && is_cutscene:
+	if !interacted && is_iteractable && is_cutscene:
 		Dialogic.start(cutscene_name)
 		interacted = true
 		print("interacted")
