@@ -1,2 +1,6 @@
-join Rika center [animation="Fade In"]
-Rika: Hello?...
+[style name="boxed novela"]
+Rika: [shake rate=20.0 level=10 connected=1]Hello?...[/shake]
+- Hi | [=""]
+	jump good/
+- Kys
+	jump bad/
