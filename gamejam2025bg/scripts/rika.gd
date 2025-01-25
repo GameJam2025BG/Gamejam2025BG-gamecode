@@ -10,7 +10,6 @@ func _ready() -> void:
 
 var interacted = false
 func _process(delta: float) -> void:
-	print(entered)
 	if entered && !interacted && is_iteractable:
 		DialogManager.start_dialog(position, text)
 		interacted = true

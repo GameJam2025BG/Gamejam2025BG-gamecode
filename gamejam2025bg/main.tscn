@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dipjjmf15edn4"]
+[gd_scene load_steps=7 format=3 uid="uid://dipjjmf15edn4"]
 
 [ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://icon.svg" id="1_2vjvq"]
 [ext_resource type="Script" path="res://world.gd" id="1_i1j7d"]
 [ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="2_cdw4s"]
-[ext_resource type="PackedScene" uid="uid://b6muog2f3lir1" path="res://components/text_box.tscn" id="3_vojcw"]
 [ext_resource type="Script" path="res://scripts/area_2d1.gd" id="4_wqmt7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3ogu"]
-size = Vector2(138, 139)
+[ext_resource type="PackedScene" uid="uid://c4ior14et04o" path="res://components/rika.tscn" id="5_dwq3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7106n"]
 radius = 173.488
@@ -20,10 +17,6 @@ position = Vector2(392, 191)
 texture = ExtResource("1_2vjvq")
 
 [node name="Main_Charecter" parent="." instance=ExtResource("2_cdw4s")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Main_Charecter"]
-position = Vector2(1, -0.5)
-shape = SubResource("RectangleShape2D_k3ogu")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(63, 202)
@@ -43,7 +36,8 @@ shape = SubResource("CircleShape2D_7106n")
 position = Vector2(117, -421)
 texture = ExtResource("1_2vjvq")
 
-[node name="TextBox" parent="." instance=ExtResource("3_vojcw")]
+[node name="rika" parent="." instance=ExtResource("5_dwq3u")]
+position = Vector2(-219, -51)
 
 [connection signal="body_entered" from="Sprite2D2/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Sprite2D2/Sprite2D/Area2D" to="Sprite2D2/Sprite2D/Area2D" method="_on_body_entered"]
