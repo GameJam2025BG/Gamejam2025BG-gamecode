@@ -36,17 +36,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
-"Rika": "res://dialogic/characters/Rika.dch",
+"Rika": "res://timelines/Rika.dch",
 "Some Creature": "res://dialogic/characters/Some Creature.dch",
-"timelines/Rika": "res://dialogic/characters/Rika.dch",
-"timelines/Some Creature": "res://dialogic/characters/Some Creature.dch"
+"characters/Rika": "res://dialogic/characters/Rika.dch"
 }
 directories/dtl_directory={
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
 "Some Creature I": "res://dialogic/timelines/Some Creature I.dtl",
-"bad": "res://dialogic/timelines/bad.dtl",
-"good": "res://dialogic/timelines/good.dtl",
-"main": "res://dialogic/timelines/main.dtl"
+"main": "res://timelines/main.dtl",
+"timelines/bad": "res://dialogic/timelines/bad.dtl",
+"timelines/good": "res://dialogic/timelines/good.dtl",
+"timelines/main": "res://dialogic/timelines/main.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/styles/bubble.tres", "res://dialogic/styles/boxed novela.tres"]
