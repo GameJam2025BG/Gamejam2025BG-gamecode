@@ -21,16 +21,16 @@ rakugo/save_folder="user://saves"
 config/name="Gamejam2025BG"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://textures/icon.svg"
 
 [autoload]
 
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
 Rakugo="*res://addons/Rakugo/Rakugo.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
