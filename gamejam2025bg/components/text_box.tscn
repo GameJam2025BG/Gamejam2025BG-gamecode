@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://bpx8culg84wmh" path="res://sprites/VCR_OSD_MONO_1.001.ttf" id="3_08x75"]
 
 [node name="TextBox" type="MarginContainer"]
-offset_right = 134.0
-offset_bottom = 38.0
+offset_right = 70.0
+offset_bottom = 31.0
 script = ExtResource("1_qurk4")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

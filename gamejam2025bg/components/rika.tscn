@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4ior14et04o"]
+[gd_scene load_steps=29 format=3 uid="uid://c4ior14et04o"]
 
 [ext_resource type="Texture2D" uid="uid://bxsrdpi5equf0" path="res://textures/rika.png" id="1_0nvh5"]
+[ext_resource type="Script" path="res://scripts/rika.gd" id="1_wskhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rt1mt"]
 size = Vector2(20, 34)
@@ -95,8 +96,8 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 0.7),
+"transitions": PackedFloat32Array(1, 1.36604, 1),
 "update": 1,
 "values": [10, 11, 10]
 }
@@ -112,7 +113,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.7),
+"times": PackedFloat32Array(0, 0.333333, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [2, 3, 2]
@@ -120,7 +121,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6v4ts"]
 resource_name = "walk_left"
-length = 0.8
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -129,10 +130,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [14, 15, 14]
+"values": [12, 15, 13, 14, 12]
 }
 
 [sub_resource type="Animation" id="Animation_rbck0"]
@@ -146,10 +147,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.533333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [5, 7, 5, 6]
+"values": [5, 7, 5, 6, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvra8"]
@@ -165,7 +166,77 @@ _data = {
 "walk_right": SubResource("Animation_rbck0")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qs7g5"]
+animation = &"idle_back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t48u3"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5ew2"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vsjyj"]
+animation = &"idle_front"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8sjmx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_qs7g5")
+blend_point_0/pos = Vector2(0, -0.9)
+blend_point_1/node = SubResource("AnimationNodeAnimation_t48u3")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_r5ew2")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_vsjyj")
+blend_point_3/pos = Vector2(0, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ypglt"]
+animation = &"walk_back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7s7y"]
+animation = &"walk_front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rh8l3"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j47cc"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_1scb5"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ypglt")
+blend_point_0/pos = Vector2(0, -0.9)
+blend_point_1/node = SubResource("AnimationNodeAnimation_w7s7y")
+blend_point_1/pos = Vector2(0, 0.9)
+blend_point_2/node = SubResource("AnimationNodeAnimation_rh8l3")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_j47cc")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+sync = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6hd4h"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7iguf"]
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g1e20"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xm2fe"]
+states/Start/position = Vector2(301, 106)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_8sjmx")
+states/idle/position = Vector2(422, 106)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_1scb5")
+states/walk/position = Vector2(581, 106)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6hd4h"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7iguf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g1e20")]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3rp2"]
+radius = 31.257
+
 [node name="rika" type="CharacterBody2D"]
+script = ExtResource("1_wskhb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -180,3 +251,19 @@ vframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_gvra8")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_xm2fe")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_idle = false
+parameters/conditions/is_walking = false
+parameters/idle/blend_position = Vector2(0.0842607, 0.079646)
+parameters/walk/blend_position = Vector2(-0.99523, 0.0212766)
+
+[node name="interactor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor"]
+shape = SubResource("CircleShape2D_n3rp2")
+
+[connection signal="body_entered" from="interactor" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="interactor" to="." method="_on_body_exited"]
