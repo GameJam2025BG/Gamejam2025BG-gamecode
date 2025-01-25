@@ -29,5 +29,17 @@ script = ExtResource("3_cxull")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 shape = SubResource("CircleShape2D_5v4hd")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(290, 8)
+texture = ExtResource("2_wttf5")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2"]
+script = ExtResource("3_cxull")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
+shape = SubResource("CircleShape2D_5v4hd")
+
 [connection signal="body_entered" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_body_exited"]

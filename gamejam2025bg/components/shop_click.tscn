@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://do56cgj4fq3er"]
+
+[ext_resource type="Script" path="res://components/sprite_2d.gd" id="1_f1wdk"]
+[ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="1_fhndf"]
+
+[node name="ShopClick" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(293, 144)
+texture = ExtResource("1_fhndf")
+script = ExtResource("1_f1wdk")
