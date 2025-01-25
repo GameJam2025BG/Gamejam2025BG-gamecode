@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/pixel_sort.gd" id="4_2nj7y"]
 [ext_resource type="Shader" path="res://shaders/bug_effect.gdshader" id="4_2y0o8"]
 [ext_resource type="Script" path="res://scripts/bug_effect.gd" id="5_q21jr"]
-[ext_resource type="Texture2D" uid="uid://bxsrdpi5equf0" path="res://textures/rika.png" id="7_m8rc4"]
+[ext_resource type="Texture2D" uid="uid://b5ue5xj6pa5ni" path="res://textures/player.png" id="7_a4i03"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l6gm"]
 shader = ExtResource("2_mm24y")
@@ -294,7 +294,7 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_vr2pu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("7_m8rc4")
+texture = ExtResource("7_a4i03")
 hframes = 4
 vframes = 4
 
