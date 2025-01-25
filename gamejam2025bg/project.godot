@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
-TransitionScreen="*res://components/transition_screen.tscn"
+TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
 
 [input]
