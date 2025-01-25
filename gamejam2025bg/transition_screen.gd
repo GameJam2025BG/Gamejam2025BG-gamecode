@@ -8,6 +8,7 @@ signal on_transition_finished
 # Scene to preload
 var next_scene = preload("res://transition_screen.tscn") 
 var new_scene_instance = null
+var transitioning: bool = false
 
 func _ready():
 	color_rect.visible = false
@@ -20,10 +21,13 @@ func _on_animation_finished(anim_name: String):
 		animation_player.play("fade_to_normal")
 	elif anim_name == "fade_to_normal":  # Fixed condition to use `anim_name`
 		color_rect.visible = false
+	transitioning = false
 
 # Start the transition to the next scene
 func transition():
-	color_rect.visible = true
-	animation_player.play("fade_to_black")
+	if !transitioning:
+		color_rect.visible = true
+		animation_player.play("fade_to_black")
+	transitioning = true
 
 # Load the preloaded scene after the fade-out transition

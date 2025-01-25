@@ -253,6 +253,8 @@ states/walk/position = Vector2(581, 106)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6hd4h"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7iguf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g1e20")]
 
 [node name="Main_Charecter" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_go1eu")
 
