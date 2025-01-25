@@ -22,24 +22,21 @@ texture = ExtResource("1_2vjvq")
 position = Vector2(63, 202)
 texture = ExtResource("1_2vjvq")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+[node name="Area2D" type="Area2D" parent="Sprite2D2"]
 position = Vector2(318, -227)
-texture = ExtResource("1_2vjvq")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D2/Sprite2D"]
 script = ExtResource("4_wqmt7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
 shape = SubResource("CircleShape2D_7106n")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(117, -421)
-texture = ExtResource("1_2vjvq")
 
 [node name="rika" parent="." instance=ExtResource("5_dwq3u")]
 position = Vector2(-219, -51)
 
-[connection signal="body_entered" from="Sprite2D2/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Sprite2D2/Sprite2D/Area2D" to="Sprite2D2/Sprite2D/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Sprite2D2/Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="Sprite2D2/Sprite2D/Area2D" to="Sprite2D2/Sprite2D/Area2D" method="_on_body_exited"]
+[node name="rika2" parent="." instance=ExtResource("5_dwq3u")]
+position = Vector2(-232, 57)
+is_cutscene = true
+
+[connection signal="body_entered" from="Sprite2D2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Sprite2D2/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_body_exited"]

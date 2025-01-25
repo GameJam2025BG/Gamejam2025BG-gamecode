@@ -261,10 +261,14 @@ parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(0.0842607, 0.079646)
 parameters/walk/blend_position = Vector2(-0.99523, 0.0212766)
 
-[node name="interactor" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
 shape = SubResource("CircleShape2D_n3rp2")
 
-[connection signal="body_entered" from="interactor" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="interactor" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
