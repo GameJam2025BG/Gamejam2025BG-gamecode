@@ -21,30 +21,34 @@ rakugo/save_folder="user://saves"
 config/name="Gamejam2025BG"
 run/main_scene="res://scenes/main_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://textures/icon.svg"
 
 [autoload]
 
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
 Rakugo="*res://addons/Rakugo/Rakugo.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
-"Some Creature": "res://dialogic/characters/Some Creature.dch",
-"characters/Rika": "res://dialogic/characters/Rika.dch"
+"Player": "res://dialogic/characters/Player.dch",
+"PlayerBubble": "res://dialogic/characters/PlayerBubble.dch",
+"Rika": "res://dialogic/characters/Rika.dch",
+"RikaBubble": "res://dialogic/characters/RikaBubble.dch",
+"Some Creature": "res://dialogic/characters/Some Creature.dch"
 }
 directories/dtl_directory={
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
 "Some Creature I": "res://dialogic/timelines/Some Creature I.dtl",
-"timelines/bad": "res://dialogic/timelines/bad.dtl",
-"timelines/good": "res://dialogic/timelines/good.dtl",
-"timelines/main": "res://dialogic/timelines/main.dtl"
+"Welcome": "res://dialogic/timelines/Welcome.dtl",
+"bad": "res://dialogic/timelines/bad.dtl",
+"good": "res://dialogic/timelines/good.dtl",
+"main": "res://dialogic/timelines/main.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/styles/bubble.tres", "res://dialogic/styles/boxed novela.tres"]
