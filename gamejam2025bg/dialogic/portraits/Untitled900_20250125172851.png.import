@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtk5n2a7whunw"
-path="res://.godot/imported/photo_2025-01-25_11-41-58-removebg.png-2a921e1e381dc006dc821406b30229cb.ctex"
+uid="uid://dnq6wakqk5h0p"
+path="res://.godot/imported/Untitled900_20250125172851.png-8ebe7382af7fa07fead777171d5f4b3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timelines/photo_2025-01-25_11-41-58-removebg.png"
-dest_files=["res://.godot/imported/photo_2025-01-25_11-41-58-removebg.png-2a921e1e381dc006dc821406b30229cb.ctex"]
+source_file="res://dialogic/portraits/Untitled900_20250125172851.png"
+dest_files=["res://.godot/imported/Untitled900_20250125172851.png-8ebe7382af7fa07fead777171d5f4b3a.ctex"]
 
 [params]
 
