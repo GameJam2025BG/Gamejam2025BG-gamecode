@@ -36,7 +36,10 @@ Rakugo="*res://addons/Rakugo/Rakugo.gd"
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
+"Player": "res://dialogic/characters/Player.dch",
+"PlayerBubble": "res://dialogic/portraits/PlayerBubble.dch",
 "Rika": "res://dialogic/characters/Rika.dch",
+"RikaBubble": "res://dialogic/characters/RikaBubble.dch",
 "Some Creature": "res://dialogic/characters/Some Creature.dch",
 "timelines/Rika": "res://dialogic/characters/Rika.dch",
 "timelines/Some Creature": "res://dialogic/characters/Some Creature.dch"
@@ -44,6 +47,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
 "Some Creature I": "res://dialogic/timelines/Some Creature I.dtl",
+"Welcome": "res://dialogic/timelines/Welcome.dtl",
 "bad": "res://dialogic/timelines/bad.dtl",
 "good": "res://dialogic/timelines/good.dtl",
 "main": "res://dialogic/timelines/main.dtl"
