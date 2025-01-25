@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6muog2f3lir1"]
 
-[ext_resource type="Script" path="res://components/text_box.gd" id="1_qurk4"]
+[ext_resource type="Script" path="res://scripts/text_box.gd" id="1_qurk4"]
 [ext_resource type="Texture2D" uid="uid://cklm4ka21d8sc" path="res://textures/chatThingy.png" id="2_cmt4k"]
 [ext_resource type="FontFile" uid="uid://bpx8culg84wmh" path="res://sprites/VCR_OSD_MONO_1.001.ttf" id="3_08x75"]
 
@@ -35,3 +35,5 @@ vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
