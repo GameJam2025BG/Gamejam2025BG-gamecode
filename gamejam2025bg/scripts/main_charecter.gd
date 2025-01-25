@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var RUN_SPEED: float = 600.0
 
 func _physics_process(delta: float) -> void:
-	
 	var speed: float = SPEED
 	
 	if InputTracker.running:
