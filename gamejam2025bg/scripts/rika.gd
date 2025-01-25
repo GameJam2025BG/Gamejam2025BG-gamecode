@@ -8,8 +8,6 @@ extends CharacterBody2D
 
 @export var is_bubble: bool = false
 
-@export var character: Node
-
 @export var text: Array[String] = ["i have 1 dialog and no input!"]
 
 var entered = false
@@ -24,7 +22,7 @@ func _process(delta: float) -> void:
 		
 	if is_bubble:
 		var layout = Dialogic.Styles.load_style("bubble")
-		layout.register_character(load("res://dialogic/characters/Some Creature.dch"), character)
+		layout.register_character(load("res://dialogic/characters/Some Creature.dch"), self)
 	
 	if !interacted && is_iteractable && !is_cutscene:
 		DialogManager.start_dialog(position, text)
