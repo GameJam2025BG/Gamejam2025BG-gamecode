@@ -29,20 +29,18 @@ InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Rakugo="*res://addons/Rakugo/Rakugo.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
 "Player": "res://dialogic/characters/Player.dch",
-"PlayerBubble": "res://dialogic/portraits/PlayerBubble.dch",
+"PlayerBubble": "res://dialogic/characters/PlayerBubble.dch",
 "Rika": "res://dialogic/characters/Rika.dch",
 "RikaBubble": "res://dialogic/characters/RikaBubble.dch",
-"Some Creature": "res://dialogic/characters/Some Creature.dch",
-"timelines/Rika": "res://dialogic/characters/Rika.dch",
-"timelines/Some Creature": "res://dialogic/characters/Some Creature.dch"
+"Some Creature": "res://dialogic/characters/Some Creature.dch"
 }
 directories/dtl_directory={
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
