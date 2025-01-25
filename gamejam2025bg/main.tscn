@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dipjjmf15edn4"]
+[gd_scene load_steps=6 format=3 uid="uid://dipjjmf15edn4"]
 
 [ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="1_2vjvq"]
 [ext_resource type="Script" path="res://world.gd" id="1_i1j7d"]
 [ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="2_cdw4s"]
 [ext_resource type="Script" path="res://scripts/area_2d1.gd" id="4_wqmt7"]
 [ext_resource type="PackedScene" uid="uid://c4ior14et04o" path="res://components/rika.tscn" id="5_dwq3u"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7106n"]
 radius = 173.488
@@ -23,7 +24,7 @@ position = Vector2(63, 202)
 texture = ExtResource("1_2vjvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
-position = Vector2(318, -227)
+position = Vector2(210, -204)
 texture = ExtResource("1_2vjvq")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D2/Sprite2D"]

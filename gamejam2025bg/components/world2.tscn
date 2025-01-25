@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://du6dd0pb38t2e"]
+[gd_scene load_steps=5 format=3 uid="uid://du6dd0pb38t2e"]
 
 [ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="1_yfex2"]
 [ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="2_wttf5"]
 [ext_resource type="Script" path="res://scripts/area_2d2.gd" id="3_cxull"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjw5m"]
-size = Vector2(138, 139)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5v4hd"]
 radius = 173.488
@@ -14,10 +11,6 @@ radius = 173.488
 
 [node name="Main_Charecter" parent="." instance=ExtResource("1_yfex2")]
 position = Vector2(-61, 13)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Main_Charecter"]
-position = Vector2(1, -0.5)
-shape = SubResource("RectangleShape2D_mjw5m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-358, -2)
