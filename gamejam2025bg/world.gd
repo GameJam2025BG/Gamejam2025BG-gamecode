@@ -1,12 +1,11 @@
 extends Node2D
 
-
 func load_bubble():
 	var layout = Dialogic.Styles.load_style("bubble")
 	layout.register_character(load("res://dialogic/characters/RikaBubble.dch"), $"Main_Charecter")
 	layout.register_character(load("res://dialogic/characters/PlayerBubble.dch"), $"Main_Charecter")
-	layout.register_character(load("res://dialogic/characters/Some Creature.dch"), $"rika")
-	layout.register_character(load("res://dialogic/characters/Another Creature.dch"), $"rika2")
+	layout.register_character(load("res://dialogic/characters/Some Creature.dch"), $"dolphin")
+	layout.register_character(load("res://dialogic/characters/Another Creature.dch"), $"peepy")
 	
 	print("Bubble style loaded")
 

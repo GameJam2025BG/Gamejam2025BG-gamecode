@@ -1,0 +1,7 @@
+"Some Creature": [shake rate=15.0 level=15 connected=0][font_size=10]llks[/font_size]Rika,[shake rate=10.0 level=10 connected=0][font_size=10]zdp[/font_size][/shake]{player_name} wouldn't want you[font_size=9]wwe[/font_size] to feel this way.[font_size=13]vuh[/font_size][/shake]
+[style name="boxed novela"]
+[background arg="res://shop.jpeg" fade="3.0" transition="Simple Fade"]
+[wait time="2.5"]
+Mom: [ns][lspeed=0.1][i]Darling, we're here for you[/i]
+[signal arg="good_ending"]
+[end_timeline]

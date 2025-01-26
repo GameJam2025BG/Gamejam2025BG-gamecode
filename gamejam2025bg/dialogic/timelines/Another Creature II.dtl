@@ -1,0 +1,6 @@
+[signal arg="load_bubble"]
+PlayerBubble: Have you seen Rika?!
+"Another Creature": [shake rate=25.0 level=25 connected=0]may[font_size=8]be[/font_size][font_size=20]Llaw[/font_size]ThEe[font_size=10]ra[/font_size]PYBjja[/shake]
+PlayerBubble: Hmm...
+PlayerBubble: Am I losing it, or am I actually starting to understand them?
+[end_timeline]

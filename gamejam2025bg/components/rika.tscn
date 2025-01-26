@@ -1,11 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://c4ior14et04o"]
+[gd_scene load_steps=28 format=3 uid="uid://c4ior14et04o"]
 
-[ext_resource type="Texture2D" uid="uid://bxsrdpi5equf0" path="res://textures/rika.png" id="1_0nvh5"]
 [ext_resource type="Script" path="res://scripts/rika.gd" id="1_wskhb"]
-[ext_resource type="Texture2D" uid="uid://cmj8cni7kkvsw" path="res://textures/interactable.png" id="3_ctgeu"]
+[ext_resource type="Texture2D" uid="uid://b5ue5xj6pa5ni" path="res://textures/player.png" id="2_3ohb5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt1mt"]
-size = Vector2(20, 34)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2xyj"]
 
 [sub_resource type="Animation" id="Animation_82v51"]
 length = 0.001
@@ -233,18 +231,16 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_1scb5")
 states/walk/position = Vector2(581, 106)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6hd4h"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7iguf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g1e20")]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n3rp2"]
-radius = 31.257
-
 [node name="rika" type="CharacterBody2D"]
 script = ExtResource("1_wskhb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_rt1mt")
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CapsuleShape2D_i2xyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0nvh5")
+texture = ExtResource("2_3ohb5")
 hframes = 4
 vframes = 4
 
@@ -261,24 +257,4 @@ parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(0.0842607, 0.079646)
 parameters/walk/blend_position = Vector2(-0.99523, 0.0212766)
 
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.7, 0.7)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("CircleShape2D_n3rp2")
-
-[node name="question_mark" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.654902)
-offset_left = -8.0
-offset_top = -39.0
-offset_right = 8.0
-offset_bottom = -23.0
-texture = ExtResource("3_ctgeu")
-
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
