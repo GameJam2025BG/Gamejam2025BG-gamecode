@@ -7,14 +7,13 @@ var hover_texture = preload("res://textures/button_hover.png")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("advance_dialog"):
 		_on_pressed()
-	pass
 
 func _on_mouse_entered():
-	print("HOVERED")
+	#print("HOVERED")
 	texture_rect.texture = hover_texture
 
 func _on_mouse_exited():
-	print("NUH HOVERED")
+	#print("NUH HOVERED")
 	texture_rect.texture = normal_texture
 
 

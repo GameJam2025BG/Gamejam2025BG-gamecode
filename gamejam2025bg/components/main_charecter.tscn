@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1d5w4hwtp3yn"]
+[gd_scene load_steps=36 format=3 uid="uid://d1d5w4hwtp3yn"]
 
 [ext_resource type="Script" path="res://scripts/main_charecter.gd" id="1_go1eu"]
 [ext_resource type="Shader" path="res://shaders/pixel_sort.gdshader" id="2_mm24y"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://shaders/bug_effect.gdshader" id="4_2y0o8"]
 [ext_resource type="Script" path="res://scripts/bug_effect.gd" id="5_q21jr"]
 [ext_resource type="Texture2D" uid="uid://b5ue5xj6pa5ni" path="res://textures/player.png" id="7_a4i03"]
+[ext_resource type="AudioStream" uid="uid://cwe6w0dfug8i2" path="res://textures/walk.mp3" id="8_tfb31"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l6gm"]
 shader = ExtResource("2_mm24y")
@@ -313,3 +314,10 @@ parameters/conditions/is_idle = false
 parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(0.0842607, 0.079646)
 parameters/walk/blend_position = Vector2(-0.99523, 0.0212766)
+
+[node name="footstep_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_tfb31")
+volume_db = 2.595
+attenuation = 3.13834
+
+[connection signal="frame_changed" from="Sprite2D" to="." method="_on_sprite_2d_frame_changed"]

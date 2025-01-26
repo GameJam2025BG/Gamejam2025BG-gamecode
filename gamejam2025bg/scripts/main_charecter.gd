@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimationPlayer
+@onready var sprite = $Sprite2D
+@onready var footstep_player = $footstep_player
+const step_frames = [1, 5, 9, 13, 3, 2, 11, 10]
 
 @export var SPEED: float = 300.0
 @export var RUN_SPEED: float = 600.0
@@ -42,3 +45,12 @@ func _physics_process(delta: float) -> void:
 		$AnimationTree.set("parameters/idle/blend_position", velocity)
 		$AnimationTree.set("parameters/walk/blend_position", velocity)
 	
+
+
+func _on_sprite_2d_frame_changed() -> void:
+	var current_state = $AnimationTree.get("parameters/playback").get_current_node()
+	if current_state == "idle": return
+	if sprite.frame in step_frames: 
+		footstep_player.playing = true
+		print("footstep")
+	print("real")
