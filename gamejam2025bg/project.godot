@@ -36,6 +36,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
+"Cashier": "res://dialogic/backgrounds/Cashier.dch",
 "Player": "res://dialogic/characters/Player.dch",
 "PlayerBubble": "res://dialogic/characters/PlayerBubble.dch",
 "Rika": "res://dialogic/characters/Rika.dch",
@@ -44,6 +45,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
+"Lavka": "res://dialogic/timelines/Lavka.dtl",
 "Some Creature I": "res://dialogic/timelines/Some Creature I.dtl",
 "Welcome": "res://dialogic/timelines/Welcome.dtl",
 "bad": "res://dialogic/timelines/bad.dtl",
@@ -73,7 +75,10 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"player_name": "Lisa",
+"product_chosen": 0
+}
 
 [editor]
 

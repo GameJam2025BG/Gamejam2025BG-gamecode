@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var entered = false
-var timeline = "Some Creature I"
+var timeline = "Another Creature I"
 
 func _ready() -> void:
 	entered = false
@@ -17,9 +17,9 @@ func _process(delta: float) -> void:
 	
 	get_viewport().set_input_as_handled()
 
-func _on_body_entered(body: PhysicsBody2D):
+func _on_body_entered(_body: PhysicsBody2D):
 	entered = true
 
-func _on_body_exited(body: PhysicsBody2D):
+func _on_body_exited(_body: PhysicsBody2D):
 	entered = false
 	interacted = false
