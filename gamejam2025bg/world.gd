@@ -1,9 +1,5 @@
 extends Node2D
 
-func _ready() -> void:
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-	
-	Dialogic.start("Lavka")
 
 func load_bubble():
 	var layout = Dialogic.Styles.load_style("bubble")
