@@ -1,0 +1,4 @@
+set {is_newspaper_found} = true
+Player: Have you heard about that accident in the newspaper? Some girl died.
+Rika (worried): Never heard about it. Let’s just go home...
+[end_timeline]

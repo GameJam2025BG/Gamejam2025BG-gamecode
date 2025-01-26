@@ -25,18 +25,19 @@ config/icon="res://textures/icon.svg"
 
 [autoload]
 
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InputTracker="*res://singleton/input_tracker.gd"
 ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
 Rakugo="*res://addons/Rakugo/Rakugo.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Another Creature": "res://dialogic/characters/Another Creature.dch",
 "Cashier": "res://dialogic/backgrounds/Cashier.dch",
+"Mom": "res://dialogic/characters/Mom.dch",
 "Player": "res://dialogic/characters/Player.dch",
 "PlayerBubble": "res://dialogic/characters/PlayerBubble.dch",
 "Rika": "res://dialogic/characters/Rika.dch",
@@ -44,9 +45,20 @@ directories/dch_directory={
 "Some Creature": "res://dialogic/characters/Some Creature.dch"
 }
 directories/dtl_directory={
+"About Picture": "res://dialogic/timelines/About Picture.dtl",
 "Another Creature I": "res://dialogic/timelines/Another Creature I.dtl",
+"Another Creature II": "res://dialogic/timelines/Another Creature II.dtl",
+"At the Graveyard": "res://dialogic/timelines/At the Graveyard.dtl",
+"Bad Ending": "res://dialogic/timelines/Bad Ending.dtl",
+"Bedroom": "res://dialogic/timelines/Bedroom.dtl",
+"Good Ending I": "res://dialogic/timelines/Good Ending I.dtl",
+"Good Ending II": "res://dialogic/timelines/Good Ending II.dtl",
+"Grave": "res://dialogic/timelines/Grave.dtl",
 "Lavka": "res://dialogic/timelines/Lavka.dtl",
+"Lore Picture": "res://dialogic/timelines/Lore Picture.dtl",
+"Newspaper": "res://dialogic/timelines/Newspaper.dtl",
 "Some Creature I": "res://dialogic/timelines/Some Creature I.dtl",
+"Some Creature II": "res://dialogic/timelines/Some Creature II.dtl",
 "Welcome": "res://dialogic/timelines/Welcome.dtl",
 "bad": "res://dialogic/timelines/bad.dtl",
 "good": "res://dialogic/timelines/good.dtl",
@@ -76,6 +88,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"is_newspaper_found": false,
+"is_picture_found": true,
 "player_name": "Lisa",
 "product_chosen": 0
 }
