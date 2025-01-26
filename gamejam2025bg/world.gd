@@ -1,7 +1,24 @@
 extends Node2D
 
 func _ready() -> void:
-	Dialogic.start('Welcome')
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
+	Dialogic.start("Lavka")
+
+func load_bubble():
+	var layout = Dialogic.Styles.load_style("bubble")
+	layout.register_character(load("res://dialogic/characters/RikaBubble.dch"), $"Main_Charecter")
+	layout.register_character(load("res://dialogic/characters/PlayerBubble.dch"), $"Main_Charecter")
+	layout.register_character(load("res://dialogic/characters/Some Creature.dch"), $"rika")
+	layout.register_character(load("res://dialogic/characters/Another Creature.dch"), $"rika2")
+	
+	print("Bubble style loaded")
+
+func _on_dialogic_signal(argument: String):
+	if argument == "load_bubble":
+		load_bubble()
+		
+	
 #func _input(event: InputEvent) -> void:
 	#if Dialogic.current_timeline != null:
 		#return

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dipjjmf15edn4"]
+[gd_scene load_steps=8 format=3 uid="uid://dipjjmf15edn4"]
 
 [ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="1_2vjvq"]
 [ext_resource type="Script" path="res://world.gd" id="1_i1j7d"]
 [ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="2_cdw4s"]
 [ext_resource type="Script" path="res://scripts/area_2d1.gd" id="4_wqmt7"]
 [ext_resource type="PackedScene" uid="uid://c4ior14et04o" path="res://components/rika.tscn" id="5_dwq3u"]
+[ext_resource type="Script" path="res://scripts/creature2.gd" id="6_egvci"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7106n"]
 radius = 173.488
@@ -19,11 +20,13 @@ texture = ExtResource("1_2vjvq")
 [node name="Main_Charecter" parent="." instance=ExtResource("2_cdw4s")]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(63, 202)
+position = Vector2(185, 1)
 texture = ExtResource("1_2vjvq")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D2"]
-position = Vector2(318, -227)
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("4_wqmt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
@@ -36,17 +39,17 @@ cutscene_name = "Some Creature I"
 is_bubble = true
 is_bugpoint = true
 
+
 [node name="NPC1Marker" type="Marker2D" parent="."]
 position = Vector2(43, -15)
 
 [node name="rika2" parent="." instance=ExtResource("5_dwq3u")]
-position = Vector2(-232, 57)
+position = Vector2(-93, 3)
+script = ExtResource("6_egvci")
 
 [node name="rika3" parent="." instance=ExtResource("5_dwq3u")]
 position = Vector2(-195, 168)
-is_cutscene = true
-cutscene_name = "Some Creature I"
-is_bubble = true
+script = null
 
 [connection signal="body_entered" from="Sprite2D2/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Sprite2D2/Area2D" to="Sprite2D2/Area2D" method="_on_body_entered"]

@@ -13,6 +13,7 @@ extends CharacterBody2D
 @export var text: Array[String] = ["i have 1 dialog and no input!"]
 
 var entered = false
+var timeline = "Some Creature I"
 
 func _ready() -> void:
 	if is_bugpoint:
@@ -33,11 +34,6 @@ func _process(delta: float) -> void:
 	if !interacted && is_iteractable && !is_cutscene:
 		DialogManager.start_dialog(position, text)
 		interacted = true
-		print("interacted")
-	if !interacted && is_iteractable && is_cutscene:
-		Dialogic.start(cutscene_name)
-		interacted = true
-		print("interacted")
 	
 	get_viewport().set_input_as_handled()
 

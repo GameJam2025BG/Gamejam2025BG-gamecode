@@ -1,1 +1,7 @@
-"Another Creature": [shake rate=20.0 level=15 connected=0]Asada s.asaa sdaasd asdas[/shake]
+[signal arg="load_bubble"]
+RikaBubble: Helloo, the weather is nice, isn't it!
+"Another Creature": [shake rate=15.0 level=15 connected=0][font_size=20]aR[/font_size]as[font_size=5]gfd[/font_size]Su[font_size=20]ssAd[/font_size]CdafS[/shake]
+RikaBubble: Love to hear this~! ^^
+PlayerBubble: Still understand nothing...
+RikaBubble: ...
+[end_timeline]

@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = SPEED
 	
-	
 	# Handle movement.
 	if InputTracker.left:
 		velocity.x -= speed * delta

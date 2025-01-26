@@ -1,0 +1,35 @@
+[signal arg="load_bubble"]
+[style name="bubble"]
+RikaBubble: Do you want anything?
+[wait time="0.1"]
+[style name="boxed novela"]
+- Can i get some water and snacks.
+	set {product_chosen} = 1
+- Can you get me an apple juice?
+	set {product_chosen} = 2
+- Nah, I don't want anything...
+	set {product_chosen} = 3
+[signal arg="load_bubble"]
+[style name="bubble"]
+RikaBubble: Okayy~!
+[style name="boxed novela"]
+[background arg="res://dialogic/backgrounds/Untitled3610_20250125202309.png" fade="1.0"]
+if {product_chosen} == 1:
+	Rika (wondering): Can I get two waters, this pack of crisps... anddd.. this pack of sweets?
+elif {product_chosen} == 2:
+	Rika (wondering): Can I get one water, an apple juice... anddd.. this pack of sweets?
+elif {product_chosen} == 3:
+	Rika (wondering): Can I get a small bottle of water.. anddd.. this pack of sweets?
+Cashier: [shake rate=15.0 level=15 connected=0]d[font_size=20]fasSs[/font_size]a[font_size=5]ttdA[/font_size]XZCS[font_size=20]ssAd[/font_size]JSsaq[/shake]
+Rika (curious): ...
+Rika (happy): mm, well, I’ll just take these, have a good one!
+[background fade="0.0"]
+[signal arg="load_bubble"]
+[style name="bubble"]
+PlayerBubble: You didn't pay for the stuff?
+RikaBubble: I figured she doesn’t want me to. ^^
+PlayerBubble: As you say...
+[style name="boxed novela"]
+Player: Have you heard about that accident in the newspaper? Some girl died.
+Rika: Never heard about it. Let’s keep going...
+[end_timeline]
