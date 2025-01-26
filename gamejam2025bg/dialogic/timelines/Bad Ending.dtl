@@ -1,0 +1,7 @@
+Player: If we are happy and alive here, let’s just stay together
+Rika: How much longer can I live in this lie.
+Player: They won't understand how you feel, Rika? I was here for you and will always be.
+Rika: I know, but...
+Player: Well, join me then.
+[signal arg="bad_ending"]
+[end_timeline]

@@ -29,7 +29,5 @@ Rika (happy): mm, well, I’ll just take these, have a good one!
 PlayerBubble: You didn't pay for the stuff?
 RikaBubble: I figured she doesn’t want me to. ^^
 PlayerBubble: As you say...
-[style name="boxed novela"]
-Player: Have you heard about that accident in the newspaper? Some girl died.
-Rika: Never heard about it. Let’s keep going...
+if {trigger_found} == 0:
 [end_timeline]

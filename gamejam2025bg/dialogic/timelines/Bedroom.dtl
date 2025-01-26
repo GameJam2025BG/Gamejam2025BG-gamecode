@@ -1,0 +1,22 @@
+[style name="boxed novela"]
+[background arg="res://shop.jpeg" fade="3.0"]
+Rika's room. There aren't lot of things, but some of them look interesting...
+Rika (wondering): Wanna watch anything? One of your beloved animes maybe? ^^
+- Not now, I’m not in the mood for movies.
+	Rika (curious): Welp, as you wishh.
+- Yes! I know one, that you’ll finally like.
+	Rika: So what's it called?
+	- "Whispers from the Shattered Mind"
+	- "The Broken Mask of Mind"
+	- "Reflections of a Broken Mind"
+	Rika (happy): Whoahhh, sounds interesting. Let's watch then!
+	[background arg="res://dialogic/backgrounds/plain-textured-black.webp" fade="2.0"]
+	[wait time="2.0"]
+	[background arg="res://dialogic/backgrounds/Untitled3610_20250125202309.png" fade="2.0"]
+	[wait time="3.0"]
+	Rika (worried): [ns]Wow...
+	[wait time="1.0"]
+	Rika (happy): Well, I didn't understand anything. ^^
+	[signal arg="restart_game"]
+- Who's next to you in this picture? | [if {is_picture_found} == true] [else="disable"]
+	jump About Picture/

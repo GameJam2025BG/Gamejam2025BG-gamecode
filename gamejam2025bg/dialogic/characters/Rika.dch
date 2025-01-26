@@ -10,7 +10,7 @@
 },
 "default_portrait": "curious",
 "description": "",
-"display_name": "Player",
+"display_name": "Rika",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
@@ -36,6 +36,15 @@
 "wondering": {
 "export_overrides": {
 "image": "\"res://dialogic/portraits/Untitled900_20250125172937.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"worried": {
+"export_overrides": {
+"image": "\"res://dialogic/portraits/Untitled900_20250126095540.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func load_bubble():
 	var layout = Dialogic.Styles.load_style("bubble")
 	layout.register_character(load("res://dialogic/characters/RikaBubble.dch"), $"Main_Charecter")
