@@ -13,8 +13,6 @@ radius = 173.488
 position = Vector2(-61, 13)
 collision_layer = 2
 collision_mask = 2
-SPEED = null
-RUN_SPEED = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-358, -2)
