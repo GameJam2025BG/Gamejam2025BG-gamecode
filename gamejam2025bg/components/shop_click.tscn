@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://do56cgj4fq3er"]
 
 [ext_resource type="Script" path="res://components/sprite_2d.gd" id="1_f1wdk"]
-[ext_resource type="Texture2D" uid="uid://bi3w4kfhivyeg" path="res://icon.svg" id="1_fhndf"]
+[ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="1_fhndf"]
 [ext_resource type="Texture2D" uid="uid://yuhi2n1ud2qs" path="res://shop.jpeg" id="3_odtva"]
 
 [sub_resource type="Environment" id="Environment_fdcf8"]

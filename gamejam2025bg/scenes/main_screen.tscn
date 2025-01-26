@@ -1,16 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp5owrlf6y0ik"]
+[gd_scene load_steps=15 format=3 uid="uid://cp5owrlf6y0ik"]
 
 [ext_resource type="Texture2D" uid="uid://df303wl08q1ew" path="res://textures/background.png" id="1_uwoey"]
 [ext_resource type="FontFile" uid="uid://bpx8culg84wmh" path="res://sprites/VCR_OSD_MONO_1.001.ttf" id="2_3uojc"]
-[ext_resource type="Texture2D" path="res://timelines/photo_2025-01-25_11-41-58-removebg.png" id="3_81ilb"]
+[ext_resource type="Texture2D" uid="uid://c7juj0x077453" path="res://textures/photo_2025-01-25_11-41-58-removebg.png" id="3_8vh8a"]
 [ext_resource type="Shader" path="res://shaders/pixelation.gdshader" id="4_gugsb"]
+[ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="4_kwg43"]
+[ext_resource type="Script" path="res://scripts/button_hover.gd" id="4_l3fhy"]
+[ext_resource type="Texture2D" uid="uid://gs2fkg5mlvox" path="res://textures/button_normal.png" id="4_rprhg"]
 [ext_resource type="Script" path="res://scenes/shader.gd" id="5_1s0nr"]
+[ext_resource type="Script" path="res://scripts/exit_button.gd" id="6_svcca"]
+[ext_resource type="Script" path="res://scenes/exit_button.gd" id="8_h5ato"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjlu8"]
+[sub_resource type="GDScript" id="GDScript_h353y"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Theme" id="Theme_hpf1k"]
+default_font = ExtResource("2_3uojc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ury4r"]
+shader = ExtResource("4_gugsb")
+shader_parameter/scanline_count = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8cks"]
 shader = ExtResource("4_gugsb")
 shader_parameter/scanline_count = 50.0
 
 [node name="main_screen" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +85,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/Control"]
 texture_filter = 1
 layout_mode = 2
-offset_left = -125.0
+offset_left = -40.0
 offset_top = -183.0
 offset_right = 1027.0
 offset_bottom = -103.0
@@ -78,13 +105,129 @@ offset_top = -256.0
 offset_right = 1028.0
 offset_bottom = 20.0
 scale = Vector2(2.4, 2.4)
-texture = ExtResource("3_81ilb")
+texture = ExtResource("3_8vh8a")
 stretch_mode = 4
 
-[node name="shader" type="CanvasLayer" parent="."]
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/Control/Control"]
+process_priority = 1
+process_physics_priority = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 359.0
+offset_top = -63.0
+offset_right = 639.0
+offset_bottom = 58.0
+flat = true
+script = ExtResource("4_l3fhy")
 
-[node name="shader" type="ColorRect" parent="shader"]
-material = SubResource("ShaderMaterial_mjlu8")
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/Control/Play"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -32.0
+offset_right = 66.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rprhg")
+stretch_mode = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Control/Control/Play/TextureRect"]
+visible = false
+self_modulate = Color(0, 6.486, 7.027, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+position = Vector2(703, 378)
+scale = Vector2(2.68237, 0.648216)
+texture = ExtResource("4_kwg43")
+script = SubResource("GDScript_h353y")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/Control/Play/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_3uojc")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Control/Control"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 62.0
+offset_right = 635.0
+offset_bottom = 183.0
+flat = true
+script = ExtResource("6_svcca")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/Control/exit"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -32.0
+offset_right = 66.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hpf1k")
+texture = ExtResource("4_rprhg")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/Control/exit/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_3uojc")
+theme_override_font_sizes/font_size = 40
+text = "exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Control/Control/exit/TextureRect"]
+visible = false
+self_modulate = Color(0, 6.486, 7.027, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+position = Vector2(703, 378)
+scale = Vector2(2.68237, 0.648216)
+texture = ExtResource("4_kwg43")
+script = ExtResource("8_h5ato")
+
+[node name="shader" type="CanvasLayer" parent="MarginContainer/VBoxContainer/Control/Control"]
+process_priority = -4
+process_physics_priority = -5
+physics_interpolation_mode = 2
+auto_translate_mode = 2
+visible = false
+follow_viewport_enabled = true
+
+[node name="shader2" type="ColorRect" parent="MarginContainer/VBoxContainer/Control/Control/shader"]
+material = SubResource("ShaderMaterial_ury4r")
 use_parent_material = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,5 +236,25 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+localize_numeral_system = false
 script = ExtResource("5_1s0nr")
-metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+z_as_relative = false
+material = SubResource("ShaderMaterial_q8cks")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_1s0nr")
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Control/Control/Play" to="MarginContainer/VBoxContainer/Control/Control/Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Control/Control/Play" to="MarginContainer/VBoxContainer/Control/Control/Play" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Control/Play" to="MarginContainer/VBoxContainer/Control/Control/Play" method="_on_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Control/Control/exit" to="MarginContainer/VBoxContainer/Control/Control/exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Control/Control/exit" to="MarginContainer/VBoxContainer/Control/Control/exit" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Control/exit" to="MarginContainer/VBoxContainer/Control/Control/exit" method="_on_pressed"]

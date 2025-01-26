@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7tuuwb5gcno"
-path="res://.godot/imported/Inside_D.png-bf3f23c0c0609dd1a1fa0f186d5f7e62.ctex"
+uid="uid://dyrb02m512ngl"
+path="res://.godot/imported/treesprite1 (1).png-f82ec0b879f92e276445ef94bd12d517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inside_D.png"
-dest_files=["res://.godot/imported/Inside_D.png-bf3f23c0c0609dd1a1fa0f186d5f7e62.ctex"]
+source_file="res://textures/treesprite1 (1).png"
+dest_files=["res://.godot/imported/treesprite1 (1).png-f82ec0b879f92e276445ef94bd12d517.ctex"]
 
 [params]
 

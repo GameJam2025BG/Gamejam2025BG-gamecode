@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dipjjmf15edn4"]
 
-[ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://icon.svg" id="1_2vjvq"]
+[ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="1_2vjvq"]
 [ext_resource type="Script" path="res://world.gd" id="1_i1j7d"]
 [ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="2_cdw4s"]
 [ext_resource type="Script" path="res://scripts/area_2d1.gd" id="4_wqmt7"]
@@ -20,11 +20,13 @@ texture = ExtResource("1_2vjvq")
 [node name="Main_Charecter" parent="." instance=ExtResource("2_cdw4s")]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(63, 202)
+position = Vector2(185, 1)
 texture = ExtResource("1_2vjvq")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D2"]
-position = Vector2(318, -227)
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("4_wqmt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
