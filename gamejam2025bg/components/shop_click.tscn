@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://do56cgj4fq3er"]
+[gd_scene load_steps=6 format=3 uid="uid://do56cgj4fq3er"]
 
 [ext_resource type="Script" path="res://components/sprite_2d.gd" id="1_f1wdk"]
 [ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="1_fhndf"]
-[ext_resource type="Texture2D" uid="uid://yuhi2n1ud2qs" path="res://shop.jpeg" id="3_odtva"]
+[ext_resource type="Texture2D" uid="uid://ctfdn4c1whabm" path="res://dialogic/backgrounds/Untitled3610_20250125202309.png" id="3_8ad82"]
+[ext_resource type="Texture2D" uid="uid://ctr0wb5j5agng" path="res://dialogic/backgrounds/output-onlinepngtools.png" id="4_8ay43"]
 
 [sub_resource type="Environment" id="Environment_fdcf8"]
 background_mode = 3
@@ -14,11 +15,13 @@ glow_hdr_luminance_cap = 2.0
 [node name="ShopClick" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(0, 6.486, 7.027, 1)
 top_level = true
 light_mask = 2
 visibility_layer = 2
-position = Vector2(232, 243)
+position = Vector2(942, 540)
+scale = Vector2(-4.52726, -1.7371)
 texture = ExtResource("1_fhndf")
 script = ExtResource("1_f1wdk")
 
@@ -26,6 +29,11 @@ script = ExtResource("1_f1wdk")
 environment = SubResource("Environment_fdcf8")
 
 [node name="Shop" type="Sprite2D" parent="."]
-position = Vector2(576, 324.5)
-scale = Vector2(1.87582, 1.56127)
-texture = ExtResource("3_odtva")
+position = Vector2(576.5, 323)
+scale = Vector2(4.504, 4.486)
+texture = ExtResource("3_8ad82")
+
+[node name="Shop2" type="Sprite2D" parent="."]
+position = Vector2(573, 344)
+scale = Vector2(4.59306, 4.39114)
+texture = ExtResource("4_8ay43")

@@ -11,12 +11,16 @@ radius = 173.488
 
 [node name="Main_Charecter" parent="." instance=ExtResource("1_yfex2")]
 position = Vector2(-61, 13)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-358, -2)
 texture = ExtResource("2_wttf5")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_cxull")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
@@ -27,6 +31,8 @@ position = Vector2(290, 8)
 texture = ExtResource("2_wttf5")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D2"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_cxull")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]

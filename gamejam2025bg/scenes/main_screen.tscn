@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://df303wl08q1ew" path="res://textures/background.png" id="1_uwoey"]
 [ext_resource type="FontFile" uid="uid://bpx8culg84wmh" path="res://sprites/VCR_OSD_MONO_1.001.ttf" id="2_3uojc"]
-[ext_resource type="Texture2D" uid="uid://c7juj0x077453" path="res://textures/photo_2025-01-25_11-41-58-removebg.png" id="3_8vh8a"]
+[ext_resource type="Texture2D" uid="uid://dll3j504235gc" path="res://dialogic/portraits/Untitled900_20250125172937.png" id="3_usy6y"]
 [ext_resource type="Shader" path="res://shaders/pixelation.gdshader" id="4_gugsb"]
 [ext_resource type="Texture2D" uid="uid://ch5klc5g1jrc3" path="res://textures/icon.svg" id="4_kwg43"]
 [ext_resource type="Script" path="res://scripts/button_hover.gd" id="4_l3fhy"]
@@ -14,15 +14,13 @@
 [sub_resource type="GDScript" id="GDScript_h353y"]
 script/source = "extends Sprite2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if get_rect().has_point(to_local(event.position)):
+			TransitionScreen.transition()
+			await TransitionScreen.on_transition_finished
+			get_tree().change_scene_to_file(\"res://main.tscn\")
+			print(\"You clicked on Sprite!\")
 "
 
 [sub_resource type="Theme" id="Theme_hpf1k"]
@@ -100,12 +98,12 @@ vertical_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/Control"]
 texture_filter = 1
 layout_mode = 2
-offset_left = -124.0
-offset_top = -256.0
-offset_right = 1028.0
-offset_bottom = 20.0
+offset_left = -265.0
+offset_top = -367.0
+offset_right = 887.0
+offset_bottom = -91.0
 scale = Vector2(2.4, 2.4)
-texture = ExtResource("3_8vh8a")
+texture = ExtResource("3_usy6y")
 stretch_mode = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/Control/Control"]

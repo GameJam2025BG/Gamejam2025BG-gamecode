@@ -1,15 +1,5 @@
 extends Node2D
 
-func _ready() -> void:
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-	
-	Dialogic.start("Good Ending I")
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_H:
-			Dialogic.start("Good Ending II")
-
 func load_bubble():
 	var layout = Dialogic.Styles.load_style("bubble")
 	layout.register_character(load("res://dialogic/characters/RikaBubble.dch"), $"Main_Charecter")

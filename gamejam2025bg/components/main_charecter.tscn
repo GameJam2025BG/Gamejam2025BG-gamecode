@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1d5w4hwtp3yn"]
+[gd_scene load_steps=39 format=3 uid="uid://d1d5w4hwtp3yn"]
 
 [ext_resource type="Script" path="res://scripts/main_charecter.gd" id="1_go1eu"]
 [ext_resource type="Shader" path="res://shaders/pixel_sort.gdshader" id="2_mm24y"]
@@ -7,6 +7,9 @@
 [ext_resource type="Shader" path="res://shaders/bug_effect.gdshader" id="4_2y0o8"]
 [ext_resource type="Script" path="res://scripts/bug_effect.gd" id="5_q21jr"]
 [ext_resource type="Texture2D" uid="uid://b5ue5xj6pa5ni" path="res://textures/player.png" id="7_a4i03"]
+[ext_resource type="Script" path="res://scripts/pixel_blackout.gd" id="7_agu2s"]
+[ext_resource type="Shader" path="res://shaders/pixel_blackout.gdshader" id="7_ypc0b"]
+[ext_resource type="AudioStream" uid="uid://cwe6w0dfug8i2" path="res://textures/walk.mp3" id="8_tfb31"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l6gm"]
 shader = ExtResource("2_mm24y")
@@ -22,6 +25,10 @@ shader_parameter/fade = 0.0
 shader_parameter/direction_r = Vector2(1, 0)
 shader_parameter/direction_g = Vector2(0.4, 1)
 shader_parameter/direction_b = Vector2(-0.7, -0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yupxp"]
+shader = ExtResource("7_ypc0b")
+shader_parameter/time = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr2pu"]
 size = Vector2(18.25, 33)
@@ -253,8 +260,8 @@ states/walk/position = Vector2(581, 106)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6hd4h"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7iguf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g1e20")]
 
 [node name="Main_Charecter" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_go1eu")
 
@@ -274,8 +281,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("4_2nj7y")
-metadata/_edit_use_anchors_ = true
 
 [node name="bug_effect" type="CanvasLayer" parent="Camera2D"]
 
@@ -289,7 +296,23 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("5_q21jr")
+
+[node name="pixel_blackout" type="CanvasLayer" parent="Camera2D"]
+
+[node name="pixel_blackout" type="ColorRect" parent="Camera2D/pixel_blackout"]
+material = SubResource("ShaderMaterial_yupxp")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("7_agu2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -312,3 +335,10 @@ parameters/conditions/is_idle = false
 parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(0.0842607, 0.079646)
 parameters/walk/blend_position = Vector2(-0.99523, 0.0212766)
+
+[node name="footstep_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_tfb31")
+volume_db = 2.595
+attenuation = 3.13834
+
+[connection signal="frame_changed" from="Sprite2D" to="." method="_on_sprite_2d_frame_changed"]

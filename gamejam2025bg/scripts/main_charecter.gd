@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimationPlayer
+@onready var sprite = $Sprite2D
+@onready var footstep_player = $footstep_player
+const step_frames = [1, 5, 9, 13, 3, 2, 11, 10]
 
 @export var SPEED: float = 300.0
 @export var RUN_SPEED: float = 600.0
@@ -8,6 +11,7 @@ extends CharacterBody2D
 var last_direction: Vector2 = Vector2(0, -1)
 
 func _physics_process(delta: float) -> void:
+	Bugpoint.charecter = position
 	var speed: float = SPEED
 	var velocity = Vector2.ZERO
 	
@@ -15,6 +19,13 @@ func _physics_process(delta: float) -> void:
 		speed = RUN_SPEED
 	else:
 		speed = SPEED
+	
+	if Bugpoint.out_of_bounds:
+		print("out of bounds")
+		velocity -= Bugpoint.return_vec * ((Bugpoint.distance / Bugpoint.max_distance) / 100)
+		ShaderPower.set_pixel_blackout(clamp(((Bugpoint.distance / Bugpoint.max_distance) - 1.1), 0, 100) * 2)
+	else:
+		ShaderPower.set_pixel_blackout(0)
 	
 	# Handle movement.
 	if InputTracker.left:
@@ -41,3 +52,12 @@ func _physics_process(delta: float) -> void:
 		$AnimationTree.set("parameters/idle/blend_position", velocity)
 		$AnimationTree.set("parameters/walk/blend_position", velocity)
 	
+
+
+func _on_sprite_2d_frame_changed() -> void:
+	var current_state = $AnimationTree.get("parameters/playback").get_current_node()
+	if current_state == "idle": return
+	if sprite.frame in step_frames: 
+		footstep_player.playing = true
+		print("footstep")
+	print("real")
