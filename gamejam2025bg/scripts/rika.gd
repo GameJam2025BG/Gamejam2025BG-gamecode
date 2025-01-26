@@ -12,6 +12,8 @@ extends CharacterBody2D
 
 @export var text: Array[String] = ["i have 1 dialog and no input!"]
 
+@onready var question_mark = $question_mark
+
 var entered = false
 var timeline = "Some Creature I"
 
@@ -22,10 +24,17 @@ func _ready() -> void:
 
 var interacted = false
 func _process(delta: float) -> void:
+	
+	if !interacted:
+		question_mark.visible = true
+	else:
+		question_mark.visible = false
+	
 	if not entered:
 		return
 	if is_bugpoint:
 		Bugpoint.bugpoint = self.position
+		
 	
 	if is_bubble:
 		var layout = Dialogic.Styles.load_style("bubble")
@@ -34,6 +43,12 @@ func _process(delta: float) -> void:
 	if !interacted && is_iteractable && !is_cutscene:
 		DialogManager.start_dialog(position, text)
 		interacted = true
+		print("interacted")
+		
+	if !interacted && is_iteractable && is_cutscene:
+		Dialogic.start(cutscene_name)
+		interacted = true
+	
 	
 	get_viewport().set_input_as_handled()
 

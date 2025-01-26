@@ -28,7 +28,7 @@ shader_parameter/direction_b = Vector2(-0.7, -0.3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yupxp"]
 shader = ExtResource("7_ypc0b")
-shader_parameter/time = 1.54
+shader_parameter/time = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr2pu"]
 size = Vector2(18.25, 33)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4ior14et04o"]
+[gd_scene load_steps=30 format=3 uid="uid://c4ior14et04o"]
 
 [ext_resource type="Texture2D" uid="uid://bxsrdpi5equf0" path="res://textures/rika.png" id="1_0nvh5"]
 [ext_resource type="Script" path="res://scripts/rika.gd" id="1_wskhb"]
+[ext_resource type="Texture2D" uid="uid://cmj8cni7kkvsw" path="res://textures/interactable.png" id="3_ctgeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rt1mt"]
 size = Vector2(20, 34)
@@ -269,6 +270,14 @@ collision_mask = 2
 light_mask = 2
 visibility_layer = 2
 shape = SubResource("CircleShape2D_n3rp2")
+
+[node name="question_mark" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.654902)
+offset_left = -8.0
+offset_top = -39.0
+offset_right = 8.0
+offset_bottom = -23.0
+texture = ExtResource("3_ctgeu")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
