@@ -269,5 +269,6 @@ light_mask = 2
 visibility_layer = 2
 shape = SubResource("CircleShape2D_n3rp2")
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

@@ -8,4 +8,4 @@ func set_pixel_sort(val: float) -> void:
 	_pixel_sort = clamp(val, 0, 1)
 	
 func set_bug_effect(val: float) -> void:
-	_bug_effect = clamp(val, 0, 1)
+	_bug_effect = clamp(val * 2 , 0, 1)

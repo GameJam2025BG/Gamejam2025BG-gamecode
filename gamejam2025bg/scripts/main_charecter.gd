@@ -8,6 +8,7 @@ extends CharacterBody2D
 var last_direction: Vector2 = Vector2(0, -1)
 
 func _physics_process(delta: float) -> void:
+	Bugpoint.charecter = position
 	var speed: float = SPEED
 	var velocity = Vector2.ZERO
 	

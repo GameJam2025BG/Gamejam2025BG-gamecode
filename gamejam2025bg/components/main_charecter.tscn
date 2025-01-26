@@ -253,8 +253,8 @@ states/walk/position = Vector2(581, 106)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6hd4h"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7iguf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g1e20")]
 
 [node name="Main_Charecter" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_go1eu")
 
@@ -274,8 +274,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("4_2nj7y")
-metadata/_edit_use_anchors_ = true
 
 [node name="bug_effect" type="CanvasLayer" parent="Camera2D"]
 
@@ -289,6 +289,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("5_q21jr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

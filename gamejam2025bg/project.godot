@@ -31,6 +31,7 @@ ShaderPower="*res://singleton/shader_power.gd"
 TransitionScreen="*res://transition_screen.tscn"
 DialogManager="*res://singleton/dialog_manager.gd"
 Rakugo="*res://addons/Rakugo/Rakugo.gd"
+Bugpoint="*res://singleton/bugpoint.gd"
 
 [dialogic]
 
