@@ -4,7 +4,10 @@ var normal_texture = preload("res://textures/button_normal.png")
 var hover_texture = preload("res://textures/button_hover.png")
 @onready var texture_rect = $TextureRect
 
-
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("advance_dialog"):
+		_on_pressed()
+	pass
 
 func _on_mouse_entered():
 	print("HOVERED")

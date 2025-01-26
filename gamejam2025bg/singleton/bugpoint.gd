@@ -9,7 +9,7 @@ extends Node
 func _process(delta: float) -> void:
 	if bugpoint_active:
 		var distance = bugpoint.distance_to(charecter)
-		print("distance: ", distance)
+		#print("distance: ", distance)
 		var procent_effect = distance / max_distance
 		ShaderPower.set_bug_effect(procent_effect * 0.02)
 		ShaderPower.set_pixel_sort(procent_effect * 2)
