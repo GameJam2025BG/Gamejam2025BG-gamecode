@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 	
 	if Bugpoint.out_of_bounds:
 		print("out of bounds")
-		velocity -= Bugpoint.return_vec * ((Bugpoint.distance / Bugpoint.max_distance) / 100)
-		ShaderPower.set_pixel_blackout(clamp(((Bugpoint.distance / Bugpoint.max_distance) - 1.1), 0, 100) * 2)
+		velocity -= Bugpoint.return_vec * ((Bugpoint.distance - Bugpoint.max_distance) / (Bugpoint.wiggle_room * 100))
+		ShaderPower.set_pixel_blackout((Bugpoint.distance - Bugpoint.max_distance) / Bugpoint.wiggle_room * 1.5)
 	else:
 		ShaderPower.set_pixel_blackout(0)
 	

@@ -21,6 +21,7 @@ func _ready() -> void:
 	if is_bugpoint:
 		Bugpoint.bugpoint = self.position
 	entered = false
+	$AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 
 var interacted = false
 func _process(delta: float) -> void:

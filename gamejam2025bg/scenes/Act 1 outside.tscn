@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bnlnhrw5wvxct"]
+[gd_scene load_steps=20 format=4 uid="uid://bnlnhrw5wvxct"]
 
 [ext_resource type="Texture2D" uid="uid://0d31ak58fptp" path="res://textures/New Piskel (5) (2).png" id="2_785tc"]
 [ext_resource type="Texture2D" uid="uid://dyrb02m512ngl" path="res://textures/treesprite1 (1).png" id="2_l6vwp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://i32pfpi0deka" path="res://textures/tiles (1).png" id="7_j2svj"]
 [ext_resource type="Texture2D" uid="uid://br2blesm5lnaf" path="res://textures/A5 (2).png" id="8_cfnm6"]
 [ext_resource type="PackedScene" uid="uid://c4ior14et04o" path="res://components/rika.tscn" id="9_k31ye"]
+[ext_resource type="PackedScene" uid="uid://d1d5w4hwtp3yn" path="res://components/main_charecter.tscn" id="10_kapgl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yu36"]
 texture = ExtResource("2_l6vwp")
@@ -1069,6 +1070,7 @@ tile_set = SubResource("TileSet_s4vv0")
 rendering_quadrant_size = 24
 
 [node name="rika" parent="TileMap" instance=ExtResource("9_k31ye")]
+position = Vector2(54, -46)
 is_cutscene = true
 cutscene_name = "Some Creature I"
 is_bubble = true
@@ -1086,3 +1088,6 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAADAP3/BQATAAQAAAADAP7/BQATAAUAAAADAP//BQATAAYAAAAEAP3/BQAUAAQAAAAEAP7/BQAUAAUAAAAEAP//BQAUAAYAAAAMAP3/BQATAAQAAAAMAP7/BQATAAUAAAAMAP//BQATAAYAAAANAP3/BQAUAAQAAAANAP7/BQAUAAUAAAANAP//BQAUAAYAAAAVAP3/BQATAAQAAAAVAP7/BQATAAUAAAAVAP//BQATAAYAAAAWAP3/BQAUAAQAAAAWAP7/BQAUAAUAAAAWAP//BQAUAAYAAAAFAPf/BQAKAAMAAAAFAPj/BQAKAAQAAAAFAPn/BQAKAAUAAAAFAPr/BQAKAAYAAAAGAPf/BQALAAMAAAAGAPj/BQALAAQAAAAGAPn/BQALAAUAAAAGAPr/BQALAAYAAAAPAAQABQAKAAMAAAAPAAUABQAKAAQAAAAPAAYABQAKAAUAAAAPAAcABQAKAAYAAAAQAAQABQALAAMAAAAQAAUABQALAAQAAAAQAAYABQALAAUAAAAQAAcABQALAAYAAAD+/wIABQAKAAMAAAD+/wMABQAKAAQAAAD+/wQABQAKAAUAAAD+/wUABQAKAAYAAAD//wIABQALAAMAAAD//wMABQALAAQAAAD//wQABQALAAUAAAD//wUABQALAAYAAAD7//3/FAAAAAAAAAD7//7/FAAAAAEAAAD7////FAAAAAIAAAD7/wAAFAAAAAMAAAD7/wEAFAAAAAQAAAD8//3/FAABAAAAAAD8//7/FAABAAEAAAD8////FAABAAIAAAD8/wAAFAABAAMAAAD8/wEAFAABAAQAAAD9//7/FAACAAEAAAD9////FAACAAIAAAD9/wAAFAACAAMAAAD9/wEAFAACAAQAAAD///v/FQAAAAAAAAAQAPv/FQAAAAUAAAAaAPn/BQALAAQAAAAZAPj/BQAKAAMAAAAZAPn/BQAKAAQAAAAZAPr/BQAKAAUAAAAZAPv/BQAKAAYAAAAaAPj/BQALAAMAAAAaAPr/BQALAAUAAAAaAPv/BQALAAYAAAAjAP3/FwAAAAAAAAA=")
 tile_set = SubResource("TileSet_s4vv0")
 rendering_quadrant_size = 24
+
+[node name="Main_Charecter" parent="." instance=ExtResource("10_kapgl")]
+position = Vector2(117, 33)
