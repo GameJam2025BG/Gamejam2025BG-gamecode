@@ -20,6 +20,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = SPEED
 	
+	if Bugpoint.out_of_bounds:
+		print("out of bounds")
+		velocity -= Bugpoint.return_vec * ((Bugpoint.distance / Bugpoint.max_distance) / 100)
+		ShaderPower.set_pixel_blackout(clamp(((Bugpoint.distance / Bugpoint.max_distance) - 1.1), 0, 100) * 2)
+	else:
+		ShaderPower.set_pixel_blackout(0)
+	
 	# Handle movement.
 	if InputTracker.left:
 		velocity.x -= speed * delta
