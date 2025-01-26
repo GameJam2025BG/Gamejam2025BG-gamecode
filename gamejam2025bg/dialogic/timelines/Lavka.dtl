@@ -1,6 +1,6 @@
 [signal arg="load_bubble"]
-[style name="bubble"]
-RikaBubble: Do you want anything?
+[style name="boxed novela"]
+Player: Do you want anything?
 [wait time="0.1"]
 [style name="boxed novela"]
 - Can i get some water and snacks.
