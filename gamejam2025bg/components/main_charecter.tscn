@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://scripts/pixel_sort.gd" id="4_2nj7y"]
 [ext_resource type="Shader" path="res://shaders/bug_effect.gdshader" id="4_2y0o8"]
 [ext_resource type="Script" path="res://scripts/bug_effect.gd" id="5_q21jr"]
-[ext_resource type="Texture2D" uid="uid://b5ue5xj6pa5ni" path="res://textures/player.png" id="7_a4i03"]
 [ext_resource type="Script" path="res://scripts/pixel_blackout.gd" id="7_agu2s"]
 [ext_resource type="Shader" path="res://shaders/pixel_blackout.gdshader" id="7_ypc0b"]
 [ext_resource type="AudioStream" uid="uid://cwe6w0dfug8i2" path="res://textures/walk.mp3" id="8_tfb31"]
+[ext_resource type="Texture2D" uid="uid://bxsrdpi5equf0" path="res://textures/rika.png" id="9_gp46i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l6gm"]
 shader = ExtResource("2_mm24y")
@@ -30,8 +30,7 @@ shader_parameter/direction_b = Vector2(-0.7, -0.3)
 shader = ExtResource("7_ypc0b")
 shader_parameter/time = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr2pu"]
-size = Vector2(18.25, 33)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flgwr"]
 
 [sub_resource type="Animation" id="Animation_82v51"]
 length = 0.001
@@ -316,10 +315,11 @@ script = ExtResource("7_agu2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_vr2pu")
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CapsuleShape2D_flgwr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("7_a4i03")
+texture = ExtResource("9_gp46i")
 hframes = 4
 vframes = 4
 

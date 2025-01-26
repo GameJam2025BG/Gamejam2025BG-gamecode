@@ -3,8 +3,8 @@ extends Node
 @export var bugpoint_active: bool = true
 @export var bugpoint: Vector2 = Vector2(0,0)
 @export var charecter: Vector2 = Vector2(0,0)
-@export var max_distance: float = 500
-@export var wiggle_room: float = 200
+@export var max_distance: float = 100
+@export var wiggle_room: float = 50
 @export var out_of_bounds: bool = false
 @export var return_vec: Vector2 = Vector2(0,0)
 @export var distance = 0
@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 		distance = bugpoint.distance_to(charecter)
 		#print("distance: ", distance)
 		procent_effect = distance / max_distance
-		ShaderPower.set_bug_effect(procent_effect * 0.004)
-		ShaderPower.set_pixel_sort(procent_effect * 1.5)
+		ShaderPower.set_bug_effect(procent_effect * 0.0015)
+		ShaderPower.set_pixel_sort(pow(procent_effect, 1.5))
 		
 		return_vec = charecter.move_toward(bugpoint, 1)
 		
